@@ -1,0 +1,6 @@
+<section class="phx-hero">
+  <h1><%= gettext "Welcome to %{name}!", name: "Rumbl" %></h1>
+  <p>Rumbl out loud.</p>
+  <%= link "Users", to: Routes.user_path(@conn, :index) %>
+  <br>
+</section>
