@@ -11,14 +11,14 @@
   <body>
     <header>
       <section class="container">
-      <h1>
-        <%= link "Home", to: Routes.page_path(@conn, :index) %>
-      </h1>
       <%= if @current_user do %>
        <h2>user: <%= @current_user.username %></h2>
        <%= link "Log out", to: Routes.session_path(@conn, :delete, @current_user), method: "delete" %>
       <% else %>
         <%= link "Log in", to: Routes.session_path(@conn, :new) %>
+      <h1>
+        <%= link "Home", to: Routes.page_path(@conn, :index) %>
+      </h1>
         <%= link "Register", to: Routes.user_path(@conn, :new) %>
       <% end %>
       </section>
