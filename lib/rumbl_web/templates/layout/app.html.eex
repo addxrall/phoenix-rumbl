@@ -12,7 +12,10 @@
     <header>
       <section class="container">
       <%= if @current_user do %>
-       <h2>user: <%= @current_user.username %></h2>
+      <h1>
+        <%= link "Home", to: Routes.page_path(@conn, :index) %>
+      </h1>
+       <p>user: <%= @current_user.username %></p>
        <%= link "Log out", to: Routes.session_path(@conn, :delete, @current_user), method: "delete" %>
       <% else %>
         <%= link "Log in", to: Routes.session_path(@conn, :new) %>
@@ -40,7 +43,6 @@
 
   </div>
   <%= @inner_content %>
-
   </main>
 
   </body>
